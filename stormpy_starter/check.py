@@ -20,7 +20,8 @@ def main():
 
     # Call function
     res = check(args.model, args.property)
-    print("Result > 0.5? " + "yes" if res else "no")
+    print("Result > 0.5? " + ("yes" if res else "no"))
+
 
 if __name__ == "__main__":
     main()
