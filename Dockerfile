@@ -9,10 +9,9 @@ WORKDIR /opt
 #ENV PATH="$STORM_DIR/build/bin:$PATH"
 #ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 
-RUN python setup.py develop
-
-# Install jupyter and extensions
+# Install jupyter, RISE and extensions
 RUN pip install jupyter
+RUN pip install RISE
 RUN pip install jupyter_contrib_nbextensions
 RUN pip install hide_code
 
@@ -33,7 +32,6 @@ RUN jupyter nbextension enable spellchecker/main
 
 # Copy files for notebook
 RUN mkdir notebooks
-COPY examples notebooks/examples
 COPY *.ipynb notebooks/
 
 # Starting
