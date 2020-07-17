@@ -54,7 +54,7 @@ RUN pip install --no-cache-dir matplotlib==3.2.1
 
 # tests
 RUN mkdir notebooks
-#COPY tutorial_discotec2020/*.css .tutorial_discotec2020/
-#COPY tutorial_discotec2020/examples tutorial_discotec2020/examples
+COPY /stormpy_starter notebooks/stormpy_starter
+COPY /examples notebooks/examples
 COPY *.ipynb notebooks/
 
