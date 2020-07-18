@@ -54,7 +54,6 @@ RUN pip install --no-cache-dir matplotlib==3.2.1
 
 # tests
 RUN mkdir notebooks
-COPY /stormpy_starter notebooks/stormpy_starter
 COPY /examples notebooks/examples
 COPY *.ipynb notebooks/
 
