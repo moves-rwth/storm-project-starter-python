@@ -33,20 +33,6 @@ ENV PATH="$HOME/.local/bin:$PATH"
 ##########
 
 RUN pip install --no-cache-dir notebook==5.7.9
-RUN pip install --no-cache-dir rise==5.6.1
-RUN pip install --no-cache-dir jupyter_contrib_nbextensions==0.5.1
-RUN pip install --no-cache-dir hide_code==0.5.5
-
-RUN jupyter nbextension enable --py rise
-RUN jupyter contrib nbextension install --user
-RUN jupyter nbextension enable splitcell/splitcell
-RUN jupyter nbextension install --py hide_code --user
-RUN jupyter nbextension enable --py hide_code
-RUN jupyter serverextension enable --py hide_code
-
-# Install python libraries
-RUN pip install --no-cache-dir matplotlib==3.2.1
-
 
 ##########
 # Copy files for notebooks
