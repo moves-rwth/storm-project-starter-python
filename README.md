@@ -1,9 +1,9 @@
 # storm-project-starter-python
 Starter project for the Python API of Storm via Stormpy
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/m-hannah/storm-project-starter-python/master?filepath=notebooks%2Fstormpy_starter.ipynb)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/moves-rwth/storm-project-starter-python/master?filepath=notebooks%2Fstormpy_starter.ipynb)
 
-## Getting Started
+## Getting started
 Before starting, make sure that Storm and stormpy are installed. If not, see the [documentation](https://moves-rwth.github.io/stormpy/installation.html) for details on how to install stormpy.
 
 First, install the Python package. If you use a virtual environment, make sure to use it.
@@ -23,6 +23,9 @@ Then, run the script using
 python stormpy_starter/check.py --model examples/die.pm --property examples/die2.pctl
 ```
 The answer should be yes.
+
+## Try out in browser
+You can also try out the starter project in your browser by using this [Binder link](https://mybinder.org/v2/gh/moves-rwth/storm-project-starter-python/master?filepath=notebooks%2Fstormpy_starter.ipynb) which starts an interactive Jupyter notebook.
 
 ## What is next?
 You are all set to implement your own tools and algorithms on top of stormpy.
