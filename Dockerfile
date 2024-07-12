@@ -1,11 +1,17 @@
-FROM movesrwth/stormpy:1.6.0
-MAINTAINER Matthias Volk <matthias.volk@cs.rwth-aachen.de>
+# Run Docker container for Jupyter notebook
+ARG STORMPY_BASE=movesrwth/stormpy:stable
+FROM $STORMPY_BASE
+MAINTAINER Matthias Volk <m.volk@utwente.nl>
 
 
 ##########
 # Create user
 ##########
 
+# Ubuntu 24.04 comes with 'ubuntu' user at id 1000
+# Change it to 1001 to free up 1000 for the binder user
+RUN usermod -u 1001 ubuntu
+RUN groupmod -g 1001 ubuntu
 ARG NB_USER=jovyan
 ARG NB_UID=1000
 ENV USER ${NB_USER}
@@ -29,17 +35,17 @@ ENV PATH="$HOME/.local/bin:$PATH"
 
 
 ##########
-# Install dependencies
+# Install Jupyterlab
 ##########
 
-RUN pip install --no-cache-dir notebook==5.7.9
+RUN python3 -m pip install --no-cache-dir notebook jupyterlab
 
 ##########
 # Copy files for notebooks
 ##########
 
-# tests
-RUN mkdir notebooks
-COPY /examples notebooks/examples
-COPY *.ipynb notebooks/
-
+COPY . ${HOME}
+# Change owner of files
+USER root
+RUN chown -R ${NB_UID} ${HOME}
+USER ${NB_USER}
