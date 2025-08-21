@@ -12,10 +12,10 @@ def check(path_to_model, property_str):
 
 
 def main():
-    parser = argparse.ArgumentParser(description='Starter project for stormpy.')
+    parser = argparse.ArgumentParser(description="Starter project for stormpy.")
 
-    parser.add_argument('--model', '-m', help='Model file', required=True)
-    parser.add_argument('--property', '-p', help='Property', required=True)
+    parser.add_argument("--model", "-m", help="Model file", required=True)
+    parser.add_argument("--property", "-p", help="Property", required=True)
     args = parser.parse_args()
 
     # Call function

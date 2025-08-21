@@ -1,7 +1,14 @@
 # Run Docker container for Jupyter notebook
+###################################
+# The Docker image can be built by executing:
+# docker build -t yourusername/stormpy-starter .
+# A different stormpy base image can be set from the commandline with:
+# --build-arg STORMPY_BASE=<new_base_image>
+
+# Set stormpy base image
 ARG STORMPY_BASE=movesrwth/stormpy:stable
 FROM $STORMPY_BASE
-MAINTAINER Matthias Volk <m.volk@utwente.nl>
+LABEL org.opencontainers.image.authors="dev@stormchecker.org"
 
 
 ##########

@@ -9,7 +9,7 @@ Before starting, make sure that Storm and stormpy are installed. If not, see the
 First, install the Python package. If you use a virtual environment, make sure to use it.
 To install the starter package, execute
 ```
-python setup.py develop
+pip install .
 ```
 
 Then, run the script using 
