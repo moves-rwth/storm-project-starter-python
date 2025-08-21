@@ -1,0 +1,60 @@
+[build-system]
+requires = ["hatchling >= 1.26"]
+build-backend = "hatchling.build"
+
+[project]
+name = "storm-project-starter-python"
+description = "Starter project for the Python API of Storm via Stormpy"
+version = "0.1"
+readme = "README.md"
+license.file = "LICENSE"
+authors = [
+    { name = "S. Junges", email = "sebastian.junges@ru.nl" },
+    { name = "M. Volk", email = "m.volk@tue.nl" }
+]
+requires-python = ">=3.9"
+dependencies = [
+    "stormpy>=1.10",
+]
+classifiers = [
+    'Intended Audience :: Science/Research',
+    'Topic :: Scientific/Engineering',
+    'Topic :: Software Development :: Libraries :: Python Modules',
+]
+
+[project.urls]
+Homepage = "https://github.com/moves-rwth/storm-project-starter-python"
+
+[project.optional-dependencies]
+dev = [
+    # Formatting
+    "black[jupyter]",
+]
+test = [
+    "pytest",
+    "nbval",
+]
+
+[tool.hatch.build.targets.wheel]
+only-include = ["stormpy_starter"]
+
+[tool.black]
+line-length = 160
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "--nbval"
+#testpaths = [
+#    "tests",
+#    "examples",
+#    "doc",
+#]
+#python_files = [
+#    "test*.py",
+#    "examples/*.py",
+#]
+#python_functions = [
+#    "*_test",
+#    "test_*",
+#    "example_*",
+#]
